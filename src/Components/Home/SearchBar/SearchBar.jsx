@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container } from '../../shared/Styles/Styles';
+import { Container, device } from '../../shared/Styles/GlobalStyles';
 
 
 
@@ -14,12 +14,12 @@ const SearchBar = () => {
     return (
         <Container>
             <Row>
-                <div>
+                <Col justifyMd={'center'}>
                     <Input type="text" placeholder='Search the best meme' />
-                    <Button>Search</Button>
-                </div>
+                    <Button borderLeft={'none'}>Search</Button>
+                </Col>
                 <div>
-                    <Button>Upload a meme</Button>
+                    <Button width={'100%'}>Upload meme</Button>
                 </div>
             </Row>
         </Container>
@@ -28,20 +28,37 @@ const SearchBar = () => {
 
 const Row = styled.div`
     display: grid;
-    justify-content: 
+    grid-template-columns: 70% 30%;
+    padding: 60px 0;
+
+    @media only screen and ${device.sm} {
+        grid-template-columns: 100%;
+        grid-gap: 20px
+        
+    } 
     
 `;
 
+const Col = styled.div`
+    display: flex;
+    justify-content: center
+    
+`
 
 const Input = styled.input`
-    padding: 6px 8px;
-    width: 70%
+    padding: 10px 8px;
+    width: 60%
 `
 
 const Button = styled.button`
-    padding: 6px 10px;
-    border: 1px solid cyan;
+    padding: 10px 20px;
+    border: 1px solid black;
+    
 
+    @media only screen and ${device.sm} {
+        display: block;
+        width: ${props => props.width}
+    } 
 `;
 
 

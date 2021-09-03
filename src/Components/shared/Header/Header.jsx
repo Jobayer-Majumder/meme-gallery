@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container } from '../Styles/Styles';
+import { Container } from '../Styles/GlobalStyles';
 
 
 
@@ -22,7 +22,7 @@ const Header = () => {
 
 
 const Section = styled.div`
-    border-bottom: 1px solid skyblue
+    border-bottom: 1px solid black
 `
 
 
